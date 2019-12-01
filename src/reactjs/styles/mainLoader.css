@@ -14,7 +14,7 @@
 }
 
 .logoPreloader {
-  animation: spinner infinite 20s linear 2.2s !important;
+  animation: spinner infinite 20s linear !important;
   height: 80px;
 }
 

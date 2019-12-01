@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {useSelector, useDispatch} from "react-redux"
+import hidePreloader from "../actions/hidePreloader"
 import MainLoader from "./mainLoader"
-import '../styles/App.css';
+import Layout from "./layout"
 
-class App extends Component {
-  render() {
-    return (
-      <MainLoader />
-    );
-  }
+const App = () => {
+	let loaded = useSelector((state) => state.preloaded)
+	let dispatch = useDispatch()
+	!loaded && setTimeout(() => {
+		dispatch(hidePreloader())
+	}, 7000)
+	return (
+		loaded ? <Layout />:<MainLoader/>
+	)
 }
 
 export default App;
