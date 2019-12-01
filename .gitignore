@@ -25,3 +25,5 @@ brevelop.geany
 .git-credentials
 *credentials*
 
+# formatting
+.prettierrc

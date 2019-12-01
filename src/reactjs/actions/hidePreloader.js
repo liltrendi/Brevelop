@@ -1,7 +1,7 @@
 const hidePreloader = () => {
-	return {
-		type: "HIDE_PRELOADER"
-	}
+  return {
+    type: "HIDE_PRELOADER"
+  }
 }
 
 export default hidePreloader
