@@ -20,3 +20,6 @@ npm-debug.log
 brevelop.geany
 .kateproject
 .goutput*
+
+# git
+.git-credentials
