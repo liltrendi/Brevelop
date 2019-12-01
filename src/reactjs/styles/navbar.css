@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  background: #42b883;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.searchbar {
+  width: 23%;
+  padding: 9px 15px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+}
+
+.searchbar:focus {
+  outline: none;
+}
+
+.searchicon {
+  position: absolute;
+  transform: translate(141px, 8.7px);
+  color: #333;
+}
+
+.searchicon:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #333;
+  opacity: 0.8;
+}
