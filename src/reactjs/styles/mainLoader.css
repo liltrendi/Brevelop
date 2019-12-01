@@ -1,0 +1,28 @@
+.preloaderContainer {
+	text-align: center;
+	height: 100vh;
+	background-color: #222;
+}
+
+.preloader {
+  padding: 20px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoPreloader {
+  animation: spinner infinite 20s linear 2.2s !important;
+  height: 80px;
+}
+
+.appName {
+	transform: translateY(-10px);
+}
+
+@keyframes spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
