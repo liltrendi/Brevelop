@@ -1,8 +1,8 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import hidePreloader from "../actions/hidePreloader"
-import MainLoader from "./mainLoader"
-import Layout from "./layout"
+import hidePreloader from "./actions/hidePreloader"
+import MainLoader from "./components/mainLoader"
+import Layout from "./components/layout"
 
 const App = () => {
   let loaded = useSelector((state) => state.preloaded)
