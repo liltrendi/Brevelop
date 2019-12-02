@@ -17,7 +17,9 @@ const NavBar = () => {
           <form
             onSubmit={(event) => {
               event.preventDefault()
-              currentText.length > 0 && dispatch(submitSearchValue(currentText))
+              currentText.length > 0
+                ? dispatch(submitSearchValue(currentText))
+                : dispatch(submitSearchValue(""))
             }}
           >
             <input
@@ -34,8 +36,9 @@ const NavBar = () => {
               icon={faSearch}
               className="searchicon"
               onClick={() => {
-                currentText.length > 0 &&
-                  dispatch(submitSearchValue(currentText))
+                currentText.length > 0
+                  ? dispatch(submitSearchValue(currentText))
+                  : dispatch(submitSearchValue(""))
               }}
             />
           </form>
