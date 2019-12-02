@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { Fade } from "react-reveal"
 import NavBar from "./navbar"
 import Guide from "./guide"
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../styles/beforeSearch.css"
 
 const Layout = () => {

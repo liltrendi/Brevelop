@@ -11,7 +11,7 @@ const MainLoader = () => {
           <img src={logo} className="logoPreloader" alt="Preloader" />
         </Fade>
         <Fade duration={600} delay={1300} bottom>
-          <h3 className="appName">Brevelop</h3>
+          <h5 className="appName">Brevelop</h5>
         </Fade>
       </div>
     </div>

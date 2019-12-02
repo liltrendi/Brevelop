@@ -34,6 +34,7 @@
 
 .searchform {
   width: 25%;
+  padding-top: 3px;
 }
 
 .searchbar {
@@ -50,7 +51,7 @@
 
 .searchicon {
   position: absolute;
-  transform: translate(319px, -27px);
+  transform: translate(-29px, 11px);
   color: #333;
   opacity: 0.93;
 }
