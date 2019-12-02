@@ -12,7 +12,7 @@
 }
 
 .searchbar {
-  width: 23%;
+  width: 100%;
   padding: 9px 15px;
   border-radius: 30px;
   border: none;
@@ -25,8 +25,9 @@
 
 .searchicon {
   position: absolute;
-  transform: translate(141px, 8.7px);
+  transform: translate(223px, -27px);
   color: #333;
+  opacity: 0.93;
 }
 
 .searchicon:hover {

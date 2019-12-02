@@ -6,7 +6,12 @@ import rootReducer from "./reactjs/reducers"
 import App from "./reactjs/App"
 import "./index.css"
 
-const store = createStore(rootReducer)
+const store = createStore(
+  rootReducer,
+  typeof window !== undefined &&
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
   <Provider store={store}>

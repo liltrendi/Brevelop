@@ -3,7 +3,7 @@ const preloaderReducer = (state = false, action) => {
     case "HIDE_PRELOADER":
       return !state
     default:
-      return false
+      return state
   }
 }
 

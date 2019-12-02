@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "electron": "^1.7.9",
+    "electron-devtools-installer": "^2.2.4",
     "foreman": "^3.0.1",
     "prettier": "^1.19.1",
     "react-scripts": "^3.2.0"

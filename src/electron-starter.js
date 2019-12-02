@@ -1,4 +1,8 @@
 const electron = require("electron")
+const {
+  default: installExtension,
+  REDUX_DEVTOOLS
+} = require("electron-devtools-installer")
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
@@ -28,8 +32,13 @@ function createWindow() {
       slashes: true
     })
   mainWindow.loadURL(startUrl)
+
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
+
+  installExtension(REDUX_DEVTOOLS)
+    .then((name) => console.log(`Added ${name}`))
+    .catch((err) => console.log(`Error occurred: ${err}`))
 
   // Emitted when the window is closed.
   mainWindow.on("closed", function() {
