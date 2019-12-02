@@ -12,11 +12,7 @@ const Layout = () => {
     <Fade duration={1500} clear>
       <NavBar />
       <div className="fillerDiv">
-        {searchedText.length > 0 && submittedText.length > 0 ? (
-          <h3>Show loader or feed</h3>
-        ) : (
-          <Guide />
-        )}
+        {submittedText.length > 0 ? <h3>Show loader or feed</h3> : <Guide />}
       </div>
     </Fade>
   )
