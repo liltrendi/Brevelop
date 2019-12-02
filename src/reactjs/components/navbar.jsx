@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import updateSearchValue from "../actions/updateSearchValue"
+import submitSearchValue from "../actions/submitSearchValue"
 import { Fade } from "react-reveal"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
@@ -13,7 +14,12 @@ const NavBar = () => {
     <Fade duration={300} top>
       <header className="header">
         <nav className="navbar">
-          <form>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              currentText.length > 0 && dispatch(submitSearchValue(currentText))
+            }}
+          >
             <input
               className="searchbar"
               type="text"
@@ -24,7 +30,14 @@ const NavBar = () => {
               }
               value={currentText}
             />
-            <FontAwesomeIcon icon={faSearch} className="searchicon" />
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="searchicon"
+              onClick={() => {
+                currentText.length > 0 &&
+                  dispatch(submitSearchValue(currentText))
+              }}
+            />
           </form>
         </nav>
       </header>

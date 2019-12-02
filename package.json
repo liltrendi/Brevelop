@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "dev": "nf start -p 3000",
-    "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,json,css,md}\""
+    "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx,json,css,md}\" && echo \"\n\""
   },
   "browserslist": {
     "production": [
