@@ -12,6 +12,30 @@
   padding: 14px 0;
 }
 
+.navIcons {
+  font-size: 32px;
+  flex: 1;
+  color: #333;
+}
+
+.atomIcon {
+  transform: translateX(-37%);
+  opacity: 0.9;
+}
+
+.slackIcon {
+  transform: translateX(37%);
+  opacity: 0.92;
+}
+
+.navIcons path:hover {
+  cursor: pointer;
+}
+
+.searchform {
+  width: 25%;
+}
+
 .searchbar {
   width: 100%;
   padding: 9px 15px;
@@ -26,7 +50,7 @@
 
 .searchicon {
   position: absolute;
-  transform: translate(223px, -27px);
+  transform: translate(319px, -27px);
   color: #333;
   opacity: 0.93;
 }

@@ -6,8 +6,7 @@ import Guide from "./guide"
 import "../styles/beforeSearch.css"
 
 const Layout = () => {
-  let submittedText = useSelector((state) => state.submitText),
-    searchedText = useSelector((state) => state.searchText)
+  let submittedText = useSelector((state) => state.submitText)
   return (
     <Fade duration={1500} clear>
       <NavBar />
