@@ -1,4 +1,4 @@
-const searchReducer = (state = "", action) => {
+const searchOnChangeReducer = (state = "", action) => {
   switch (action.type) {
     case "KEYSTROKE":
       state = action.payload
@@ -8,4 +8,4 @@ const searchReducer = (state = "", action) => {
   }
 }
 
-export default searchReducer
+export default searchOnChangeReducer
