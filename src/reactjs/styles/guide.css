@@ -1,0 +1,31 @@
+.guide-container {
+  width: 100vw !important;
+  padding: 0 250px !important;
+}
+
+.guide-col {
+  text-align: center;
+}
+
+.explain-header {
+  font-family: "Secular One", sans-serif;
+  color: #2f2e41;
+  margin-top: -10px;
+}
+
+.pcSvg {
+  padding-top: 80px;
+  animation: upDown 3s infinite ease forwards 1s;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

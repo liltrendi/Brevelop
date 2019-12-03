@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Secular+One&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #dff6f0;
+  background: #b2fcff;
+  overflow-x: hidden;
 }

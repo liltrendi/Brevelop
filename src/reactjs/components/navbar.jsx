@@ -19,6 +19,7 @@ const NavBar = () => {
             icon={faAtom}
             className="atomIcon navIcons"
             onClick={() => {
+              dispatch(updateSearchValue(""))
               dispatch(submitSearchValue(""))
             }}
           />
@@ -36,6 +37,7 @@ const NavBar = () => {
               type="text"
               name="search"
               placeholder="Find tweets"
+              maxLength="17"
               onChange={(event) =>
                 dispatch(updateSearchValue(event.target.value))
               }
