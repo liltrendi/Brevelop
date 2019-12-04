@@ -1,4 +1,5 @@
 import React from "react"
+import { Fade } from "react-reveal"
 import TweetStructure from "./tweetStructure"
 import FemaleAvatar from "../img/female.svg"
 import MaleAvatar from "../img/male.svg"
@@ -12,8 +13,6 @@ const TweetSection = () => {
     }
   return (
     <div>
-      <TweetStructure opts={female} />
-      <TweetStructure opts={male} />
       <TweetStructure opts={female} />
       <TweetStructure opts={male} />
       <TweetStructure opts={female} />
