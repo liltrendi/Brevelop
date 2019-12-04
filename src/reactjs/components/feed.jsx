@@ -1,8 +1,10 @@
 import React from "react"
-import TweetStream from "./getTweetStream"
+import FeedLayout from "./feedLayout"
+//import TweetStream from "./getTweetStream"
 
 const Feed = () => {
-  return <TweetStream />
+  //return <TweetStream />
+  return <FeedLayout />
 }
 
 export default Feed

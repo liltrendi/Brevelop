@@ -1,10 +1,11 @@
 import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import addTweetToState from "../actions/addTweetToState"
-const { remote } = window.require("electron")
+//import { useSelector, useDispatch } from "react-redux"
+//import addTweetToState from "../actions/addTweetToState"
+//const { remote } = window.require("electron")
 
 const TweetStream = () => {
-  let dispatch = useDispatch(),
+  /*
+	let dispatch = useDispatch(),
     keyword = useSelector((state) => state.submitText),
     twitStream = remote.getGlobal("GetTweets")(keyword)
 
@@ -16,7 +17,7 @@ const TweetStream = () => {
   })
 
   let tweetFeed = useSelector((state) => state.tweetCollection)
-
+	*/
   return (
     <div>
       <p>Feed</p>

@@ -2,9 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux"
 import { Fade } from "react-reveal"
 import NavBar from "./navbar"
-import Guide from "./guide"
 import Feed from "./feed"
-import CallToAction from "./callToAction"
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../styles/beforeSearch.css"
 
@@ -13,12 +11,18 @@ const Layout = () => {
   return (
     <Fade duration={1500} clear>
       <NavBar />
-      <CallToAction />
-      <div className="fillerDiv">
-        {submittedText.length > 0 ? <Feed /> : <Guide />}
-      </div>
+      <Feed />
     </Fade>
   )
 }
 
 export default Layout
+
+/*
+import Guide from "./guide"
+import CallToAction from "./callToAction"
+<CallToAction />
+<div className="fillerDiv">
+        {submittedText.length > 0 ? <Feed /> : <Feed />}
+      </div>
+*/

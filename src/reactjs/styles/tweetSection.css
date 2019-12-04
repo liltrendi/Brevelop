@@ -1,0 +1,56 @@
+.card {
+  border: none !important;
+}
+
+.tweetHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+}
+
+.twitterNames {
+  padding: 12px 0 0 18px;
+}
+
+.displayName {
+  font-weight: bold;
+}
+
+.userName {
+  margin-left: -2.8px;
+}
+
+.tweetFooter {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+
+.retweetDiv {
+  padding-left: 247px;
+}
+
+.heartDiv {
+  padding-left: 20px;
+}
+
+.replyDiv {
+  padding-left: 20px;
+}
+
+.retweetValue {
+  padding-left: 3.5px;
+}
+
+.heartValue {
+  padding-left: 5.5px;
+}
+
+.replyValue {
+  padding-left: 5.5px;
+}
