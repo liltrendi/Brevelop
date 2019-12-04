@@ -1,6 +1,11 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faRetweet, faHeart, faReply } from "@fortawesome/free-solid-svg-icons"
+import {
+  faRetweet,
+  faHeart,
+  faReply,
+  faClock
+} from "@fortawesome/free-solid-svg-icons"
 import "../styles/tweetStructure.css"
 
 const TweetStructure = (props) => {
@@ -13,14 +18,15 @@ const TweetStructure = (props) => {
           <p className="userName">@cool_username</p>
         </div>
       </div>
-      <div className="card-body">
+      <div className="card-body tweetBody">
         <h5>
           Tweet body here or long lorem ipsum text that can fit or maybe wrap
           around this card to span multiple lines
         </h5>
         <div className="tweetFooter">
-          <p className="card-text">
-            <small className="text-muted">
+          <p className="card-text tweetCreatedAt">
+            <FontAwesomeIcon icon={faClock} className="clockIcon" />
+            <small className="tweetTime">
               13:47 <span>&#183;</span> 03 Dec 19
             </small>
           </p>

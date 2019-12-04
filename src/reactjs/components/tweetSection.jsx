@@ -14,6 +14,16 @@ const TweetSection = () => {
     <div>
       <TweetStructure opts={female} />
       <TweetStructure opts={male} />
+      <TweetStructure opts={female} />
+      <TweetStructure opts={male} />
+      <TweetStructure opts={female} />
+      <TweetStructure opts={male} />
+      <TweetStructure opts={female} />
+      <TweetStructure opts={male} />
+      <TweetStructure opts={female} />
+      <TweetStructure opts={male} />
+      <TweetStructure opts={female} />
+      <TweetStructure opts={male} />
     </div>
   )
 }
