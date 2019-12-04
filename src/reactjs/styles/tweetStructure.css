@@ -1,10 +1,13 @@
 .card {
-  border: none !important;
+  border-radius: 10px !important;
+  box-shadow: 1px 1px 2px #dcffcc;
+  margin-bottom: 30px;
 }
 
 .tweetHeader {
   display: flex;
   flex-direction: row;
+  background: #dcffcc !important;
 }
 
 .avatar {
@@ -32,7 +35,7 @@
 }
 
 .retweetDiv {
-  padding-left: 247px;
+  padding-left: 230px;
 }
 
 .heartDiv {
