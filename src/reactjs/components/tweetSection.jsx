@@ -69,7 +69,9 @@ const TweetSection = () => {
         userName: tweetObj["user"]["screen_name"]
           ? tweetObj["user"]["screen_name"]
           : "userNameNotFound",
-        avatar: FemaleAvatar,
+        avatar: tweetObj["user"]["profile_image_url"]
+          ? tweetObj["user"]["profile_image_url"]
+          : tweetObj["user"]["profile_image_url_https"],
         text: tweetObj["text"]
           ? tweetObj["text"]
           : "This tweet was not found. It may have been deleted, or is temporarily unavailable",
