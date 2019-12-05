@@ -22,7 +22,7 @@ global.GetTweets = function(keyword) {
     access_token: process.env.REACT_APP_TWITTER_ACCESS_TOKEN_KEY,
     access_token_secret: process.env.REACT_APP_TWITTER_ACCESS_TOKEN_SECRET,
     strictSSL: true
-  }).stream("statuses/filter", { track: keyword })
+  }).stream("statuses/filter", { track: keyword, language: "en" })
 }
 
 function createWindow() {
