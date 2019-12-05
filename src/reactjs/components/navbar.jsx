@@ -10,6 +10,7 @@ import "../styles/navbar.css"
 
 const NavBar = () => {
   let currentText = useSelector((state) => state.searchText),
+    submittedtext = useSelector((state) => state.submitText),
     dispatch = useDispatch()
   return (
     <Fade duration={300} top>
@@ -38,9 +39,12 @@ const NavBar = () => {
               name="search"
               placeholder="Find tweets"
               maxLength="17"
-              onChange={(event) =>
+              onChange={(event) => {
                 dispatch(updateSearchValue(event.target.value))
-              }
+                if (submittedtext.length > 0) {
+                  dispatch(submitSearchValue(""))
+                }
+              }}
               value={currentText}
             />
             <FontAwesomeIcon

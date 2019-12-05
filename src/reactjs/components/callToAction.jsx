@@ -45,9 +45,3 @@ const CallToAction = () => {
 }
 
 export default CallToAction
-
-/*
-if(submit.length > 0 && search.length < 1){
-	return <h5 className="alert alert-danger cta-header">Search again for more</h5>
-}
-*/

@@ -10,39 +10,37 @@ import {
 import "../styles/tweetStructure.css"
 
 const TweetStructure = (props) => {
+  const tweet = props.structure
   return (
     <Fade duration={600} bottom>
       <div className="card">
         <div className="card-header tweetHeader">
-          <img className="avatar" src={props.opts.src} alt="Avatar" />
+          <img className="avatar" src={tweet.avatar} alt="Avatar" />
           <div className="twitterNames">
-            <h6 className="displayName">Display Name</h6>
-            <p className="userName">@cool_username</p>
+            <h6 className="displayName">{tweet.displayName}</h6>
+            <p className="userName">@{tweet.userName}</p>
           </div>
         </div>
         <div className="card-body tweetBody">
-          <h5>
-            Tweet body here or long lorem ipsum text that can fit or maybe wrap
-            around this card to span multiple lines
-          </h5>
+          <h5>{tweet.text}</h5>
           <div className="tweetFooter">
             <p className="card-text tweetCreatedAt">
               <FontAwesomeIcon icon={faClock} className="clockIcon" />
               <small className="tweetTime">
-                13:47 <span>&#183;</span> 03 Dec 19
+                {tweet.time} <span>&#183;</span> {tweet.date}
               </small>
             </p>
             <div className="retweetDiv">
               <FontAwesomeIcon icon={faRetweet} className="retweetIcon" />
-              <small className="retweetValue">32</small>
+              <small className="retweetValue">{tweet.retweets}</small>
             </div>
             <div className="heartDiv">
               <FontAwesomeIcon icon={faHeart} className="heartIcon" />
-              <small className="heartValue">7</small>
+              <small className="heartValue">{tweet.favorites}</small>
             </div>
             <div className="replyDiv">
               <FontAwesomeIcon icon={faReply} className="replyIcon" />
-              <small className="replyValue">2</small>
+              <small className="replyValue">{tweet.replies}</small>
             </div>
           </div>
         </div>

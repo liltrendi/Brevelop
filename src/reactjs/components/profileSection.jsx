@@ -1,8 +1,12 @@
 import React from "react"
-import "../styles/profileSection.css"
+import ProfileStructure from "./profileStructure"
 
 const ProfileSection = () => {
-  return <div>Profiles</div>
+  return (
+    <div>
+      <ProfileStructure />
+    </div>
+  )
 }
 
 export default ProfileSection
