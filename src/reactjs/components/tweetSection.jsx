@@ -4,10 +4,10 @@ import { useSelector } from "react-redux"
 import FemaleAvatar from "../img/female.svg"
 import MaleAvatar from "../img/male.svg"
 
-/*
 const parseDate = (date) => {
   let stripped = date.split(" ")
-  return stripped.slice(0, 3).concat(stripped.slice(-1))
+  let newDate = stripped.slice(0, 3).concat(stripped.slice(-1))
+  return [`${newDate[0]},`].concat(newDate.slice(1)).join(" ")
 }
 
 const parseTime = (time) => {
@@ -18,7 +18,7 @@ const parseTime = (time) => {
     .slice(0, 2)
     .join(":")
 }
-
+/*
 const chooseAvatar = (min = 1, max = 2) => {
   let num = Math.floor(Math.random() * max) + min
   if (num === 1) {
@@ -60,6 +60,8 @@ const TweetSection = () => {
     }
   } else {
     tweetStructuresToRender = tweetData.map((tweetObj, tweetIndex) => {
+      let tweetTime = parseTime(tweetObj["created_at"]),
+        tweetDate = parseDate(tweetObj["created_at"])
       let tweetProp = {
         displayName: tweetObj["user"]["name"]
           ? tweetObj["user"]["name"]
@@ -71,8 +73,8 @@ const TweetSection = () => {
         text: tweetObj["text"]
           ? tweetObj["text"]
           : "This tweet was not found. It may have been deleted, or is temporarily unavailable",
-        time: "",
-        date: "03 Dec 19",
+        time: tweetTime ? tweetTime : "00:00",
+        date: tweetDate ? tweetDate : "03 Dec 19",
         retweets: tweetObj["retweet_count"] ? tweetObj["retweet_count"] : 0,
         favorites: tweetObj["favorite_count"] ? tweetObj["favorite_count"] : 0,
         replies: tweetObj["reply_count"] ? tweetObj["reply_count"] : 0
