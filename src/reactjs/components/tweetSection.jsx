@@ -61,7 +61,7 @@ const TweetSection = () => {
     setTimeout(() => {
       tweetStructuresToRender = tweetData.map((tweetObj, tweetIndex) => {
         let tweetDate = parseDate(tweetObj["created_at"])
-        let tweetTime = parseTime(tweetObj("created_at"))
+        let tweetTime = parseTime(tweetObj["created_at"])
         let tweetProp = {
           displayName: tweetObj["user"]["name"],
           userName: tweetObj["user"]["screen_name"],
