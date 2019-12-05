@@ -10,7 +10,7 @@ const parseDate = (date) => {
 }
 
 const parseTime = (time) => {
-  let stripped = date.split(" ")
+  let stripped = time.split(" ")
   let newArray = stripped.slice(0, 4)
   return newArray[newArray.length - 1]
     .split(":")
