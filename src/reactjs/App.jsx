@@ -5,7 +5,7 @@ import MainLoader from "./components/mainLoader"
 import Layout from "./components/layout"
 
 const App = () => {
-  let loaded = useSelector((state) => state.preloaded)
+  let loaded = useSelector(state => state.preloaded)
   let dispatch = useDispatch()
   !loaded &&
     setTimeout(() => {

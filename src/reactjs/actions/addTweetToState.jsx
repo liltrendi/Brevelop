@@ -1,4 +1,4 @@
-const addTweetToState = (feed) => {
+const addTweetToState = feed => {
   return {
     type: "GET_TWEET",
     payload: feed

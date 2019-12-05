@@ -39,8 +39,8 @@ const msgDisplayLogic = (search, submit) => {
 }
 
 const CallToAction = () => {
-  let searchText = useSelector((state) => state.searchText),
-    submittedText = useSelector((state) => state.submitText)
+  let searchText = useSelector(state => state.searchText),
+    submittedText = useSelector(state => state.submitText)
   return <div className="cta">{msgDisplayLogic(searchText, submittedText)}</div>
 }
 

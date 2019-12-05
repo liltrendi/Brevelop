@@ -47,8 +47,8 @@ function createWindow() {
   mainWindow.webContents.openDevTools()
 
   installExtension(REDUX_DEVTOOLS)
-    .then((name) => console.log(`Added ${name}`))
-    .catch((err) => console.log(`Error occurred: ${err}`))
+    .then(name => console.log(`Added ${name}`))
+    .catch(err => console.log(`Error occurred: ${err}`))
 
   // Emitted when the window is closed.
   mainWindow.on("closed", function() {

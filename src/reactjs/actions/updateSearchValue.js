@@ -1,4 +1,4 @@
-const updateSearchValue = (value) => {
+const updateSearchValue = value => {
   return {
     type: "KEYSTROKE",
     payload: value

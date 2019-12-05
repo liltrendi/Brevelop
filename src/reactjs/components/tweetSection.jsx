@@ -4,13 +4,40 @@ import { useSelector } from "react-redux"
 import FemaleAvatar from "../img/female.svg"
 import MaleAvatar from "../img/male.svg"
 
-const parseDate = (date) => {
+const getTodayDate = () => {
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ]
+  let today = new Date()
+  let time = today
+    .toLocaleTimeString("en-GB", { hour12: false })
+    .split(":")
+    .slice(0, 2)
+    .join(":")
+  let month = months[today.getMonth()]
+  let dd = String(today.getDate()).padStart(2, "0")
+  let yyyy = today.getFullYear()
+  return [`${time}`, `${dd} ${month} ${yyyy}`]
+}
+
+const parseDate = date => {
   let stripped = date.split(" ")
   let newDate = stripped.slice(0, 3).concat(stripped.slice(-1))
   return [`${newDate[0]},`].concat(newDate.slice(1)).join(" ")
 }
 
-const parseTime = (time) => {
+const parseTime = time => {
   let stripped = time.split(" ")
   let newArray = stripped.slice(0, 4)
   return newArray[newArray.length - 1]
@@ -29,19 +56,19 @@ const chooseAvatar = (min = 1, max = 2) => {
 }
 
 const TweetSection = () => {
-  let tweetData = useSelector((state) => state.tweetCollection)
+  let tweetData = useSelector(state => state.tweetCollection)
   let tweet1 = {},
     tweet2 = {}
   let tweetStructuresToRender = []
-  if (tweetData.length < 1) {
+  if (tweetData.length < 2) {
     tweet1 = {
       displayName: "Lady Gaga",
       userName: "ladyGagA",
       avatar: FemaleAvatar,
       text:
         "This is an example of a tweet, that represents a similar outlook once the results you searched for are fetched",
-      time: "13.47",
-      date: "03 Dec 19",
+      time: getTodayDate()[0],
+      date: getTodayDate()[1],
       retweets: 39,
       favorites: 7,
       replies: 13
@@ -52,8 +79,8 @@ const TweetSection = () => {
       avatar: MaleAvatar,
       text:
         "We are retrieving all the data you requested, hang on tight and the tweets will display here shortly",
-      time: "00.12",
-      date: "03 Dec 19",
+      time: getTodayDate()[0],
+      date: getTodayDate()[1],
       retweets: 2131,
       favorites: 647,
       replies: 593
@@ -70,12 +97,12 @@ const TweetSection = () => {
         userName: tweetObj["user"]["screen_name"]
           ? tweetObj["user"]["screen_name"]
           : "userNameNotFound",
-        avatar: tweetAvi ? tweetAvi : tweetObj["user"]["profile_image_url"],
+        avatar: tweetAvi,
         text: tweetObj["text"]
           ? tweetObj["text"]
           : "This tweet was not found. It may have been deleted, or is temporarily unavailable",
-        time: tweetTime ? tweetTime : "00:00",
-        date: tweetDate ? tweetDate : "03 Dec 19",
+        time: tweetTime ? tweetTime : getTodayDate()[0],
+        date: tweetDate ? tweetDate : getTodayDate()[1],
         retweets: tweetObj["retweet_count"] ? tweetObj["retweet_count"] : 0,
         favorites: tweetObj["favorite_count"] ? tweetObj["favorite_count"] : 0,
         replies: tweetObj["reply_count"] ? tweetObj["reply_count"] : 0

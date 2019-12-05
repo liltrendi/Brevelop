@@ -9,7 +9,7 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "../styles/beforeSearch.css"
 
 const Layout = () => {
-  let submittedText = useSelector((state) => state.submitText),
+  let submittedText = useSelector(state => state.submitText),
     dispatch = useDispatch()
   if (submittedText.length > 0) {
     dispatch(showFeed())

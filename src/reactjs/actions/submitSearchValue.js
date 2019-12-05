@@ -1,4 +1,4 @@
-const submitSearchValue = (value) => {
+const submitSearchValue = value => {
   return {
     type: "SUBMIT",
     payload: value

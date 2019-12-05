@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import "../styles/tweetStructure.css"
 
-const TweetStructure = (props) => {
+const TweetStructure = props => {
   const tweet = props.structure
   return (
     <Fade duration={600} bottom>
