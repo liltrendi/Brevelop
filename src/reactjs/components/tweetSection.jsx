@@ -18,7 +18,7 @@ const parseTime = (time) => {
     .slice(0, 2)
     .join(":")
 }
-/*
+
 const chooseAvatar = (min = 1, max = 2) => {
   let num = Math.floor(Math.random() * max) + min
   if (num === 1) {
@@ -27,7 +27,7 @@ const chooseAvatar = (min = 1, max = 2) => {
     return FemaleAvatar
   }
 }
-*/
+
 const TweetSection = () => {
   let tweetData = useSelector((state) => state.tweetCollection)
   let tweet1 = {},
@@ -61,7 +61,8 @@ const TweetSection = () => {
   } else {
     tweetStructuresToRender = tweetData.map((tweetObj, tweetIndex) => {
       let tweetTime = parseTime(tweetObj["created_at"]),
-        tweetDate = parseDate(tweetObj["created_at"])
+        tweetDate = parseDate(tweetObj["created_at"]),
+        tweetAvi = chooseAvatar(1, 2)
       let tweetProp = {
         displayName: tweetObj["user"]["name"]
           ? tweetObj["user"]["name"]
@@ -69,9 +70,7 @@ const TweetSection = () => {
         userName: tweetObj["user"]["screen_name"]
           ? tweetObj["user"]["screen_name"]
           : "userNameNotFound",
-        avatar: tweetObj["user"]["profile_image_url"]
-          ? tweetObj["user"]["profile_image_url"]
-          : tweetObj["user"]["profile_image_url_https"],
+        avatar: tweetAvi ? tweetAvi : tweetObj["user"]["profile_image_url"],
         text: tweetObj["text"]
           ? tweetObj["text"]
           : "This tweet was not found. It may have been deleted, or is temporarily unavailable",
