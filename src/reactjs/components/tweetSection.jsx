@@ -115,10 +115,6 @@ const TweetSection = () => {
       <div>
         <TweetStructure key={1} structure={tweet1} />
         <TweetStructure key={2} structure={tweet2} />
-        <TweetStructure key={1} structure={tweet1} />
-        <TweetStructure key={2} structure={tweet2} />
-        <TweetStructure key={1} structure={tweet1} />
-        <TweetStructure key={2} structure={tweet2} />
       </div>
     ) : (
       tweetStructuresToRender
