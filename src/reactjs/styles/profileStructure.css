@@ -76,10 +76,21 @@
 .profileBody {
   background: rgba(0, 0, 0, 0.03);
   text-align: center;
+  border: 0.1px solid #a6a6a6;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
 }
 
 .profileTweetAlert {
   background: #ffc107;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.profileTweetAlertDanger {
+  background: #ed5249;
+  color: #f2f2f2;
+  font-weight: bold;
   letter-spacing: 1.5px;
 }
 
@@ -90,7 +101,22 @@
 }
 
 .profileTextArea:focus {
-  border: 1px solid #ffc107 !important;
+  border: 1px solid #a6a6a6 !important;
+}
+
+.profileTextAreaError {
+  border: 1px solid #ed5249 !important;
+  width: 100% !important;
+  resize: none !important;
+  animation: wobble 1s linear;
+}
+
+.profileTextAreaError:focus {
+  border: 1px solid #ed5449 !important;
+}
+
+.tweetOverLimit {
+  color: red;
 }
 
 .profileBtnContainer {
@@ -134,5 +160,29 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-15px) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(10px) rotate(3deg);
+  }
+  45% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  60% {
+    transform: translateX(0px) rotate(2deg);
+  }
+  75% {
+    transform: translateX(5px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }

@@ -5,6 +5,7 @@ import searchOnSubmitReducer from "./searchOnSubmitReducer"
 import tweetReducer from "./tweetReducer"
 import showFeedReducer from "./showFeedReducer"
 import streamStartedReducer from "./streamStartedReducer"
+import updateTweetValueReducer from "./updateTweetValueReducer"
 
 const rootReducer = combineReducers({
   preloaded: preloaderReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   submitText: searchOnSubmitReducer,
   streamStarted: streamStartedReducer,
   showFeed: showFeedReducer,
+  tweetValue: updateTweetValueReducer,
   tweetCollection: tweetReducer
 })
 

@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { connect } from "react-redux"
+import handleTweetValue from "../actions/handleTweetValue"
 import { Fade } from "react-reveal"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
@@ -41,7 +43,23 @@ class ProfileStructure extends Component {
         top: 20,
         width: "35.35%"
       },
-      rowSize = this.state.fixate ? 9 : 6
+      rowSize = this.state.fixate ? 9 : 5,
+      textAreaClassName =
+        this.props.tweetValue.length < 141
+          ? "profileTextArea"
+          : "profileTextAreaError",
+      alertText =
+        this.props.tweetValue.length < 141 ? (
+          <p className="alert profileTweetAlert">
+            What's on your mind? Tweet it!
+          </p>
+        ) : (
+          <p className="alert profileTweetAlertDanger">
+            Whoa! Your tweet is too long!
+          </p>
+        ),
+      tweetCountClassName =
+        this.props.tweetValue.length > 140 ? "tweetOverLimit" : ""
     return (
       <Fade duration={600} top>
         <div className="card profileCard" style={this.state.fixate && styles}>
@@ -72,21 +90,28 @@ class ProfileStructure extends Component {
             </div>
           </div>
           <div className="card-body profileBody">
-            <p className="alert profileTweetAlert">
-              What's on your mind? Tweet it!
-            </p>
+            {alertText}
             <div className="profileForm">
-              <form>
+              <form
+                onSubmit={event => {
+                  event.preventDefault()
+                }}
+              >
                 <div className="form-group">
                   <textarea
-                    className=" profileTextArea"
+                    className={textAreaClassName}
                     rows={rowSize}
-                    maxLength="140"
+                    onChange={event => {
+                      this.props.handleTweetValue(event.target.value)
+                    }}
+                    value={this.props.tweetValue}
                   ></textarea>
                 </div>
                 <div className="profileBtnContainer">
                   <span className="tweetCharacterCount">
-                    <small>140 characters left</small>
+                    <small className={tweetCountClassName}>
+                      Used {this.props.tweetValue.length}/140 characters
+                    </small>
                   </span>
                   <button className="btn btn-lg btn-info profileTweetBtn">
                     Tweet{" "}
@@ -105,4 +130,14 @@ class ProfileStructure extends Component {
   }
 }
 
-export default ProfileStructure
+const mapStateToProps = state => ({
+  tweetValue: state.tweetValue
+})
+
+const mapDispatchToProps = () => {
+  return {
+    handleTweetValue
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps())(ProfileStructure)
