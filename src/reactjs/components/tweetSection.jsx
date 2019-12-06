@@ -60,7 +60,7 @@ const TweetSection = () => {
   let tweet1 = {},
     tweet2 = {}
   let tweetStructuresToRender = []
-  if (tweetData.length < 2) {
+  if (tweetData.length < 2 && !tweetData.some(item => item === null)) {
     tweet1 = {
       displayName: "Lady Gaga",
       userName: "ladyGagA",
@@ -113,6 +113,10 @@ const TweetSection = () => {
   let finalTweets =
     tweetStructuresToRender.length === 0 ? (
       <div>
+        <TweetStructure key={1} structure={tweet1} />
+        <TweetStructure key={2} structure={tweet2} />
+        <TweetStructure key={1} structure={tweet1} />
+        <TweetStructure key={2} structure={tweet2} />
         <TweetStructure key={1} structure={tweet1} />
         <TweetStructure key={2} structure={tweet2} />
       </div>

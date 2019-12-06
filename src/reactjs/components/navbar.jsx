@@ -10,6 +10,7 @@ import "../styles/navbar.css"
 
 const NavBar = () => {
   let currentText = useSelector(state => state.searchText),
+    //counter = useSelector(state => state.tweetCollection),
     //submittedtext = useSelector(state => state.submitText),
     //streamStarted = useSelector(state => state.streamStarted),
     dispatch = useDispatch()
