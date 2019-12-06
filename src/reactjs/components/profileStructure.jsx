@@ -71,19 +71,28 @@ class ProfileStructure extends Component {
             </div>
           </div>
           <div className="card-body profileBody">
-            User description and form to tweet
+            <p className="alert profileTweetAlert">
+              What's on your mind? Tweet it!
+            </p>
             <div className="profileForm">
               <form>
                 <div className="form-group">
                   <textarea
-                    className="form-control"
-                    rows="10"
-                    value="Tweet something"
+                    className=" profileTextArea"
+                    rows="5"
+                    maxLength="140"
                   ></textarea>
                 </div>
                 <div className="profileBtnContainer">
-                  <button className="btn btn-md btn-info profileTweetBtn">
-                    Tweet <FontAwesomeIcon icon={faPaperPlane} />
+                  <span className="tweetCharacterCount">
+                    <small>140 characters left</small>
+                  </span>
+                  <button className="btn btn-lg btn-info profileTweetBtn">
+                    Tweet{" "}
+                    <FontAwesomeIcon
+                      icon={faPaperPlane}
+                      className="profilePaperPlane"
+                    />
                   </button>
                 </div>
               </form>

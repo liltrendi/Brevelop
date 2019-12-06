@@ -78,19 +78,61 @@
   text-align: center;
 }
 
+.profileTweetAlert {
+  background: #ffc107;
+  letter-spacing: 1.5px;
+}
+
+.profileTextArea {
+  border: 1px solid #a6a6a6 !important;
+  width: 100% !important;
+  resize: none !important;
+}
+
+.profileTextArea:focus {
+  border: 1px solid #ffc107 !important;
+}
+
 .profileBtnContainer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
+.tweetCharacterCount {
+  margin-right: auto;
+  padding-top: 5px;
+}
+
 .profileTweetBtn {
-  background: #ffc107 !important;
-  color: #333 !important;
   border: none !important;
+  background: #404040 !important;
+  color: #ffc107 !important;
+  font-size: 17px !important;
+  letter-spacing: 1.3px !important;
+  border-radius: 22px !important;
+  padding: 10px 22px !important;
 }
 
 .profileTweetBtn:hover {
-  background: #333 !important;
-  color: #ffc107 !important;
+  background: #404040 !important;
+  color: #fff !important;
+}
+
+.profileTweetBtn:hover > .profilePaperPlane {
+  animation: animate 0.4s linear !important;
+}
+
+.profilePaperPlane {
+  margin-left: 3px;
+  font-size: 15px !important;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
