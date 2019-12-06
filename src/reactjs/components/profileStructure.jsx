@@ -37,10 +37,11 @@ class ProfileStructure extends Component {
 
   render() {
     let styles = {
-      position: "fixed",
-      top: 20,
-      width: "35.35%"
-    }
+        position: "fixed",
+        top: 20,
+        width: "35.35%"
+      },
+      rowSize = this.state.fixate ? 9 : 6
     return (
       <Fade duration={600} top>
         <div className="card profileCard" style={this.state.fixate && styles}>
@@ -79,7 +80,7 @@ class ProfileStructure extends Component {
                 <div className="form-group">
                   <textarea
                     className=" profileTextArea"
-                    rows="5"
+                    rows={rowSize}
                     maxLength="140"
                   ></textarea>
                 </div>
