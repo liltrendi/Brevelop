@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import handleTweetValue from "../actions/handleTweetValue"
+import fixateProfile from "../actions/fixateProfile"
+import unfixateProfile from "../actions/unfixateProfile"
 import { Fade } from "react-reveal"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
@@ -13,12 +15,6 @@ import MaleAvatar from "../img/male.svg"
 import "../styles/profileStructure.css"
 
 class ProfileStructure extends Component {
-  constructor() {
-    super()
-    this.state = {
-      fixate: false
-    }
-  }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll)
   }
@@ -31,19 +27,18 @@ class ProfileStructure extends Component {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop
     if (winScroll >= 75) {
-      this.setState({ fixate: true })
+      this.props.fixateProfile()
     } else {
-      this.setState({ fixate: false })
+      this.props.unfixateProfile()
     }
   }
-
   render() {
     let styles = {
         position: "fixed",
         top: 20,
         width: "35.35%"
       },
-      rowSize = this.state.fixate ? 9 : 5,
+      rowSize = this.props.profileFixed ? 9 : 5,
       textAreaClassName =
         this.props.tweetValue.length < 141
           ? "profileTextArea"
@@ -62,7 +57,10 @@ class ProfileStructure extends Component {
         this.props.tweetValue.length > 140 ? "tweetOverLimit" : ""
     return (
       <Fade duration={600} top>
-        <div className="card profileCard" style={this.state.fixate && styles}>
+        <div
+          className="card profileCard"
+          style={this.props.profileFixed && styles}
+        >
           <div className="card-header profileHeader">
             <div className="profileHeaderTop">
               <img src={MaleAvatar} className="profileAvatar" alt="Avatar" />
@@ -95,6 +93,10 @@ class ProfileStructure extends Component {
               <form
                 onSubmit={event => {
                   event.preventDefault()
+                  let tweetText = this.props.tweetValue
+                  if (tweetText.length > 0 && tweetText.length < 141) {
+                    alert("Tweeting!")
+                  }
                 }}
               >
                 <div className="form-group">
@@ -113,7 +115,10 @@ class ProfileStructure extends Component {
                       Used {this.props.tweetValue.length}/140 characters
                     </small>
                   </span>
-                  <button className="btn btn-lg btn-info profileTweetBtn">
+                  <button
+                    className="btn btn-lg btn-info profileTweetBtn"
+                    type="submit"
+                  >
                     Tweet{" "}
                     <FontAwesomeIcon
                       icon={faPaperPlane}
@@ -131,12 +136,15 @@ class ProfileStructure extends Component {
 }
 
 const mapStateToProps = state => ({
-  tweetValue: state.tweetValue
+  tweetValue: state.tweetValue,
+  profileFixed: state.fixateProfile
 })
 
 const mapDispatchToProps = () => {
   return {
-    handleTweetValue
+    handleTweetValue,
+    fixateProfile,
+    unfixateProfile
   }
 }
 

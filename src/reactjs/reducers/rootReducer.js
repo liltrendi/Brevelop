@@ -6,6 +6,7 @@ import tweetReducer from "./tweetReducer"
 import showFeedReducer from "./showFeedReducer"
 import streamStartedReducer from "./streamStartedReducer"
 import updateTweetValueReducer from "./updateTweetValueReducer"
+import fixateProfileReducer from "./fixateProfileReducer"
 
 const rootReducer = combineReducers({
   preloaded: preloaderReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   submitText: searchOnSubmitReducer,
   streamStarted: streamStartedReducer,
   showFeed: showFeedReducer,
+  fixateProfile: fixateProfileReducer,
   tweetValue: updateTweetValueReducer,
   tweetCollection: tweetReducer
 })
