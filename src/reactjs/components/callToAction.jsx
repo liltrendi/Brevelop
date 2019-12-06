@@ -1,47 +1,16 @@
 import React from "react"
-import { useSelector } from "react-redux"
+import { Fade } from "react-reveal"
+import Guide from "./guide"
 import "../styles/callToAction.css"
 
-const msgDisplayLogic = (search, submit) => {
-  if (submit.length !== search.length) {
-    return (
-      <h5
-        className="alert cta-header"
-        style={{ background: "#ff6347", color: "#2f2e41" }}
-      >
-        Hit Enter to begin search
-      </h5>
-    )
-  }
-  if (search.length > 0) {
-    if (submit.length > 0) {
-      return (
-        <h5
-          className="alert cta-header"
-          style={{ background: "#ff6347", color: "#2f2e41" }}
-        >
-          Finding all matching tweets
-        </h5>
-      )
-    }
-  } else {
-    if (submit.length < 1) {
-      return (
-        <h5
-          className="alert cta-header"
-          style={{ background: "#ff6347", color: "#2f2e41" }}
-        >
-          Discover tweets on Brevelop
-        </h5>
-      )
-    }
-  }
-}
-
 const CallToAction = () => {
-  let searchText = useSelector(state => state.searchText),
-    submittedText = useSelector(state => state.submitText)
-  return <div className="cta">{msgDisplayLogic(searchText, submittedText)}</div>
+  return (
+    <Fade delay={100} duration={500} clear>
+      <div className="callToAction">
+        <Guide />
+      </div>
+    </Fade>
+  )
 }
 
 export default CallToAction

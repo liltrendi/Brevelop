@@ -3,15 +3,18 @@ import TweetSection from "./tweetSection"
 import ProfileSection from "./profileSection"
 import "../styles/feedLayout.css"
 
-const FeedLayout = () => {
+import { dummyData } from "../helpers/dummyData"
+
+const FeedLayout = props => {
+  let data = dummyData
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-7 tweetSection">
-          <TweetSection />
+          <TweetSection opts={data.tweetOpts} />
         </div>
         <div className="col-md-5 profileSection">
-          <ProfileSection />
+          <ProfileSection opts={data.profileOpts} />
         </div>
       </div>
     </div>

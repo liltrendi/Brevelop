@@ -1,6 +1,6 @@
 import React from "react"
-import TweetStructure from "./tweetStructure"
 import { useSelector } from "react-redux"
+import TweetStructure from "./tweetStructure"
 
 import {
   getTodayDate,
@@ -9,9 +9,10 @@ import {
   chooseAvatar
 } from "../helpers/helperFunctions"
 
-const TweetSection = props => {
+const PrepareTweets = () => {
   let tweetData = useSelector(state => state.tweetCollection),
     tweetStructuresToRender = []
+
   if (!(tweetData.length < 2 && !tweetData.some(item => item === null))) {
     tweetStructuresToRender = tweetData.map((tweetObj, tweetIndex) => {
       let tweetTime = parseTime(tweetObj["created_at"]),
@@ -37,16 +38,11 @@ const TweetSection = props => {
       return <TweetStructure key={tweetIndex} structure={tweetProp} />
     })
   }
-  let finalTweets =
-    tweetStructuresToRender.length === 0 ? (
-      <div>
-        <TweetStructure key={1} structure={props.opts.tweet1} />
-        <TweetStructure key={2} structure={props.opts.tweet2} />
-      </div>
-    ) : (
-      <div>{tweetStructuresToRender}</div>
-    )
-  return <div>{finalTweets}</div>
+  if (tweetStructuresToRender.length > 0) {
+    return <div>{tweetStructuresToRender}</div>
+  } else {
+    return <span></span>
+  }
 }
 
-export default TweetSection
+export default PrepareTweets

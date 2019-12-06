@@ -6,26 +6,29 @@ import FeedLayout from "./feedLayout"
 
 const Feed = () => {
   let showFeed = useSelector(state => state.showFeed),
-    streamStarted = useSelector(state => state.streamStarted),
-    collection = useSelector(state => state.tweetCollection)
-  if (showFeed) {
-    let streamCancelled = false
-    return (
-      <div>
-        <TweetStream opts={streamCancelled} />
-        <FeedLayout />
-      </div>
-    )
+    searchText = useSelector(state => state.searchText),
+    submitText = useSelector(state => state.submitText)
+
+  if (searchText.length > 0 && submitText.length === 0 && !showFeed) {
+    return <FeedLayout opts={false} />
   } else {
-    let streamCancelled = true
-    let whatToRender =
-      streamStarted && collection.length > 0 ? <FeedLayout /> : <CallToAction />
-    return (
-      <div>
-        <TweetStream opts={streamCancelled} />
-        {whatToRender}
-      </div>
-    )
+    if (showFeed) {
+      let streamCancelled = false
+      return (
+        <div>
+          <TweetStream opts={streamCancelled} />
+          <FeedLayout opts={true} />
+        </div>
+      )
+    } else {
+      let streamCancelled = true
+      return (
+        <div>
+          <TweetStream opts={streamCancelled} />
+          <CallToAction />
+        </div>
+      )
+    }
   }
 }
 

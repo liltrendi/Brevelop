@@ -5,8 +5,7 @@ import streamStarted from "../actions/streamStarted"
 const { remote } = window.require("electron")
 
 const TweetStream = props => {
-  /*
-	let dispatch = useDispatch(),
+  let dispatch = useDispatch(),
     keyword = useSelector(state => state.submitText),
     tweetSize = useSelector(state => state.tweetCollection)
 
@@ -17,7 +16,7 @@ const TweetStream = props => {
     dispatch(addTweetToState(false))
   } else {
     twitStream.on("tweet", tweet => {
-	  dispatch(streamStarted())
+      dispatch(streamStarted())
       dispatch(addTweetToState(tweet))
       if (tweetSize.length > 30) {
         twitStream.stop()
@@ -27,7 +26,6 @@ const TweetStream = props => {
       twitStream.stop()
     })
   }
-  */
 
   return <span></span>
 }

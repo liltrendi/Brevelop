@@ -1,4 +1,8 @@
-.cta {
+.callToAction {
+  margin-top: 130px;
+}
+
+/*.cta {
   display: flex;
   justify-content: center;
   margin-top: 30px;
@@ -11,4 +15,4 @@
 
 .cta-header:hover {
   cursor: not-allowed;
-}
+}*/
