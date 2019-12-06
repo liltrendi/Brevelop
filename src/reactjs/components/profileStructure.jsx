@@ -45,16 +45,30 @@ class ProfileStructure extends Component {
       <Fade duration={600} top>
         <div className="card profileCard" style={this.state.fixate && styles}>
           <div className="card-header profileHeader">
-            <img src={MaleAvatar} className="profileAvatar" alt="Avatar" />
-            <div className="profileHeaderNames">
-              <h5>Brian Njogu</h5>
-              <h6>@briancanspit</h6>
+            <div className="profileHeaderTop">
+              <img src={MaleAvatar} className="profileAvatar" alt="Avatar" />
+              <div className="profileHeaderNames">
+                <h6 className="profileDisplayName">Brian Njogu</h6>
+                <p className="profileUserName">@briancanspit</p>
+              </div>
             </div>
-          </div>
-          <div className="profileIcons">
-            <FontAwesomeIcon icon={faTwitter} className="profTwitterIcon" />
-            <FontAwesomeIcon icon={faUsers} className="profTwitterIcon" />
-            <FontAwesomeIcon icon={faUserPlus} className="profTwitterIcon" />
+            <div className="profileIcons">
+              <span className="profIconSpan">
+                <FontAwesomeIcon icon={faTwitter} className="profileIcon" />
+                <h6 className="profileTweetCount">203</h6>
+                <h6 className="profileIconInfo">Tweets</h6>
+              </span>
+              <span className="profIconSpan">
+                <FontAwesomeIcon icon={faUsers} className="profileIcon" />
+                <h6 className="profileFollowerCount">15.6K</h6>
+                <h6 className="profileIconInfo">Followers</h6>
+              </span>
+              <span className="profIconSpan">
+                <FontAwesomeIcon icon={faUserPlus} className="profileIcon" />
+                <h6 className="profileFollowingCount">968</h6>
+                <h6 className="profileIconInfo">Following</h6>
+              </span>
+            </div>
           </div>
           <div className="card-body profileBody">
             User description and form to tweet
