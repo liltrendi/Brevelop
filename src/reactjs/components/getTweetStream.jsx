@@ -5,27 +5,27 @@ import streamStarted from "../actions/streamStarted"
 const { remote } = window.require("electron")
 
 const TweetStream = props => {
-  let dispatch = useDispatch(),
-    keyword = useSelector(state => state.submitText),
-    tweetSize = useSelector(state => state.tweetCollection)
-
-  let twitStream = remote.getGlobal("GetTweets")(keyword)
-
-  if (props.opts.streamCancelled) {
-    twitStream.stop()
-    dispatch(addTweetToState(false))
-  } else {
-    twitStream.on("tweet", tweet => {
-      dispatch(streamStarted())
-      dispatch(addTweetToState(tweet))
-      if (tweetSize.length > 30) {
-        twitStream.stop()
-      }
-    })
-    twitStream.on("error", error => {
-      twitStream.stop()
-    })
-  }
+  //   let dispatch = useDispatch(),
+  //     keyword = useSelector(state => state.submitText),
+  //     tweetSize = useSelector(state => state.tweetCollection)
+  //
+  //   let twitStream = remote.getGlobal("GetTweets")(keyword)
+  //
+  //   if (props.opts.streamCancelled) {
+  //     twitStream.stop()
+  //     dispatch(addTweetToState(false))
+  //   } else {
+  //     twitStream.on("tweet", tweet => {
+  //       dispatch(streamStarted())
+  //       dispatch(addTweetToState(tweet))
+  //       if (tweetSize.length > 30) {
+  //         twitStream.stop()
+  //       }
+  //     })
+  //     twitStream.on("error", error => {
+  //       twitStream.stop()
+  //     })
+  //   }
 
   return <span></span>
 }

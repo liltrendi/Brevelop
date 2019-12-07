@@ -45,18 +45,20 @@ class ProfileStructure extends Component {
           : "profileTextAreaError",
       alertText =
         this.props.tweetValue.length < 141 ? (
-          <p className="alert profileTweetAlert">
-            What's on your mind? Tweet it!
-          </p>
+          <p className="alert profileTweetAlert">What's on your mind?</p>
         ) : (
           <p className="alert profileTweetAlertDanger">
             Whoa! Your tweet is too long!
           </p>
         ),
       tweetCountClassName =
-        this.props.tweetValue.length > 140 ? "tweetOverLimit" : ""
+        this.props.tweetValue.length > 140 ? "tweetOverLimit" : "",
+      tweetBtn =
+        this.props.tweetValue.length > 140
+          ? "btn btn-lg btn-info tweetBtnDisable shadow-none"
+          : "btn btn-lg btn-info profileTweetBtn"
     return (
-      <Fade duration={600} top>
+      <Fade duration={600} right>
         <div
           className="card profileCard"
           style={this.props.profileFixed && styles}
@@ -103,6 +105,7 @@ class ProfileStructure extends Component {
                   <textarea
                     className={textAreaClassName}
                     rows={rowSize}
+                    placeholder="Post a new tweet"
                     onChange={event => {
                       this.props.handleTweetValue(event.target.value)
                     }}
@@ -115,10 +118,7 @@ class ProfileStructure extends Component {
                       Used {this.props.tweetValue.length}/140 characters
                     </small>
                   </span>
-                  <button
-                    className="btn btn-lg btn-info profileTweetBtn"
-                    type="submit"
-                  >
+                  <button className={tweetBtn} type="submit">
                     Tweet{" "}
                     <FontAwesomeIcon
                       icon={faPaperPlane}

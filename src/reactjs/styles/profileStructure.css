@@ -140,13 +140,32 @@
   padding: 10px 22px !important;
 }
 
+.tweetBtnDisable {
+  border: none !important;
+  background: #404040 !important;
+  color: #ffc107 !important;
+  font-size: 17px !important;
+  letter-spacing: 1.3px !important;
+  border-radius: 22px !important;
+  padding: 10px 22px !important;
+  cursor: not-allowed !important;
+}
+
+.tweetBtnDisable:hover {
+  cursor: not-allowed !important;
+}
+
+.tweetBtnDisable:hover > .profilePaperPlane {
+  animation: none !important;
+}
+
 .profileTweetBtn:hover {
   background: #404040 !important;
   color: #fff !important;
 }
 
 .profileTweetBtn:hover > .profilePaperPlane {
-  animation: animate 0.4s linear !important;
+  animation: animate 0.4s linear;
 }
 
 .profilePaperPlane {
